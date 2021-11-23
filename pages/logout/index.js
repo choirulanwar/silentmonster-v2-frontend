@@ -18,6 +18,7 @@ const Logout = () => {
     setTimeout(() => {
       Router.push('/login')
     }, 3000)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return <Fragment>You will be automatically redirected in 3 second</Fragment>
