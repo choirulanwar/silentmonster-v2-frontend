@@ -38,11 +38,13 @@ const View = ({ pageInfo, queries, mutations }) => {
       <td>{normalizeDate(element.node.createdAt)}</td>
       <td>{normalizeDate(element.node.updatedAt)}</td>
       <td>
-        {
+        {element.node.conclusion ? (
           <Badge color={conclusionColor[element.node.conclusion]}>
             {element.node.conclusion}
           </Badge>
-        }
+        ) : (
+          <Badge color={conclusionColor['QUEUE']}>PENDING</Badge>
+        )}
       </td>
       <td>
         <Menu transition="pop-top-right" placement="end" gutter={1}>

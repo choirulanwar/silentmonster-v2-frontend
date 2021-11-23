@@ -6,7 +6,7 @@ import {
   UPDATE_PROJECT_TEMPLATE_MUTATIONS,
   DELETE_PROJECT_TEMPLATE_MUTATIONS,
   DEPLOY_NEW_SITE_MUTATIONS
-} from '@/graphql/Template/project'
+} from '@/graphql/ProjectTemplate'
 import { GET_SITES_QUERIES } from '@/graphql/Site'
 import { toast } from 'react-toastify'
 

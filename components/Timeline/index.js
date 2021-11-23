@@ -31,8 +31,14 @@ const Timeline = ({ loading = true, active, datas }) => {
                     {normalizeDate(data.startedAt)}
                   </p>
                   <p className="text-xs mt-2">
-                    Completed in
-                    {normalizeDuration(data.completedAt - data.startedAt)}
+                    {data?.conclusion ? (
+                      <>
+                        Completed in
+                        {normalizeDuration(data.completedAt - data.startedAt)}
+                      </>
+                    ) : (
+                      <>In progress...</>
+                    )}
                   </p>
                 </>
               ) : (
