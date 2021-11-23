@@ -1,0 +1,18 @@
+$sidebar-color: #bfbfbf;
+$sidebar-bg-color: #061C4D;
+
+$submenu-bg-color: #051945;
+$submenu-bg-color-collapsed: #05153a;
+
+$highlight-color: #fff;
+$highlight-bg-color: #05153a;
+
+$icon-bg-color: rgba(255, 255, 255, 0.05);
+$icon-size: 35px;
+
+@import './variables.scss';
+@import './partials/animation';
+@import './partials/sidebar';
+@import './partials/menu';
+@import './partials/popperArrow';
+@import './partials/reactSlidedown';
