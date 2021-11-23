@@ -28,16 +28,15 @@ const RegisterForm = () => {
     validationSchema,
     onSubmit: async (values, { resetForm }) => {
       try {
-        useRegisterMutation.register(values)
-        const result = useRegisterMutation.result
+        await useRegisterMutation.register(values).then(async result => {
+          if (result?.Register) {
+            toast.success('Success')
 
-        if (result) {
-          toast.success('Success')
-
-          router.push('/confirm-mail')
-        } else {
-          toast.error(useRegisterMutation.error?.[0]?.message)
-        }
+            router.push('/confirm-mail')
+          } else {
+            toast.error(useRegisterMutation.error?.[0]?.message)
+          }
+        })
       } catch (e) {
       } finally {
         resetForm({})

@@ -25,16 +25,17 @@ const ForgotPasswordForm = () => {
     validationSchema,
     onSubmit: async (values, { resetForm }) => {
       try {
-        useForgotPasswordMutation.forgotPassword(values)
-        const result = useForgotPasswordMutation.result
+        await useForgotPasswordMutation
+          .forgotPassword(values)
+          .then(async result => {
+            if (result?.ForgotPassword) {
+              toast.success('Success')
 
-        if (result) {
-          toast.success('Success')
-
-          router.push('/reset-password')
-        } else {
-          toast.error(useForgotPasswordMutation.error?.[0]?.message)
-        }
+              router.push('/reset-password')
+            } else {
+              toast.error(useForgotPasswordMutation.error?.[0]?.message)
+            }
+          })
       } catch (e) {
       } finally {
         resetForm({})

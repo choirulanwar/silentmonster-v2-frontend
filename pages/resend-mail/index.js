@@ -25,16 +25,15 @@ const ResendMailForm = () => {
     validationSchema,
     onSubmit: async (values, { resetForm }) => {
       try {
-        useResendMailMutation.resendMail(values)
-        const result = useResendMailMutation.result
+        await useResendMailMutation.resendMail(values).then(async result => {
+          if (result?.ResendMail) {
+            toast.success('Success')
 
-        if (result) {
-          toast.success('Success')
-
-          router.push('/confirm-mail')
-        } else {
-          toast.error(useResendMailMutation.error?.[0]?.message)
-        }
+            router.push('/confirm-mail')
+          } else {
+            toast.error(useResendMailMutation.error?.[0]?.message)
+          }
+        })
       } catch (e) {
       } finally {
         resetForm({})

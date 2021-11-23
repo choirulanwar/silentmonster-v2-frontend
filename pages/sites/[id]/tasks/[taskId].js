@@ -11,7 +11,7 @@ const Page = props => {
     activePage: props?.page || 1
   }
 
-  const jobQuery = useJob({ id: props?.taskId })
+  const jobQuery = useJob({ siteId: props?.id, id: props?.taskId })
 
   const queries = { job: jobQuery }
 

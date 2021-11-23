@@ -32,16 +32,17 @@ const ResetPasswordForm = () => {
     validationSchema,
     onSubmit: async (values, { resetForm }) => {
       try {
-        useResetPasswordMutation.resetPassword(values)
-        const result = useResetPasswordMutation.result
+        await useResetPasswordMutation
+          .resetPassword(values)
+          .then(async result => {
+            if (result?.ResetPassword) {
+              toast.success('Success')
 
-        if (result) {
-          toast.success('Success')
-
-          router.push('/dashboard')
-        } else {
-          toast.error(useResetPasswordMutation.error?.[0]?.message)
-        }
+              router.push('/dashboard')
+            } else {
+              toast.error(useResetPasswordMutation.error?.[0]?.message)
+            }
+          })
       } catch (e) {
       } finally {
         resetForm({})

@@ -14,7 +14,7 @@ export const useLogin = () => {
   return {
     login: async variables => {
       try {
-        await login({ variables })
+        return await login({ variables }).then(d => d.data)
       } catch (error) {
         console.error(error)
       }
@@ -31,7 +31,7 @@ export const useRegister = () => {
   return {
     register: async variables => {
       try {
-        await register({ variables })
+        return await register({ variables }).then(d => d.data)
       } catch (error) {
         console.error(error)
       }
@@ -50,7 +50,7 @@ export const useConfirmMail = () => {
   return {
     confirmMail: async variables => {
       try {
-        await confirmMail({ variables })
+        return await confirmMail({ variables }).then(d => d.data)
       } catch (error) {
         console.error(error)
       }
@@ -69,7 +69,7 @@ export const useForgotPassword = () => {
   return {
     forgotPassword: async variables => {
       try {
-        await forgotPassword({ variables })
+        return await forgotPassword({ variables }).then(d => d.data)
       } catch (error) {
         console.error(error)
       }
@@ -87,7 +87,7 @@ export const useResendMail = () => {
   return {
     resendMail: async variables => {
       try {
-        await resendMail({ variables })
+        return await resendMail({ variables }).then(d => d.data)
       } catch (error) {
         console.error(error)
       }
@@ -106,7 +106,7 @@ export const useResetPassword = () => {
   return {
     resetPassword: async variables => {
       try {
-        await resetPassword({ variables })
+        return await resetPassword({ variables }).then(d => d.data)
       } catch (error) {
         console.error(error)
       }

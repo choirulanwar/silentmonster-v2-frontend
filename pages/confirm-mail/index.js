@@ -25,16 +25,15 @@ const ConfirmMailForm = () => {
     validationSchema,
     onSubmit: async (values, { resetForm }) => {
       try {
-        useConfirmMailMutation.confirmMail(values)
-        const result = useConfirmMailMutation.result
+        await useConfirmMailMutation.confirmMail(values).then(async result => {
+          if (result?.ConfirmMail) {
+            toast.success('Success')
 
-        if (result) {
-          toast.success('Success')
-
-          router.push('/dashboard')
-        } else {
-          toast.error(useConfirmMailMutation.error?.[0]?.message)
-        }
+            router.push('/dashboard')
+          } else {
+            toast.error(useConfirmMailMutation.error?.[0]?.message)
+          }
+        })
       } catch (e) {
       } finally {
         resetForm({})

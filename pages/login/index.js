@@ -30,32 +30,31 @@ const LoginForm = () => {
     validationSchema,
     onSubmit: async (values, { resetForm }) => {
       try {
-        useLoginMutation.login(values)
-        const result = useLoginMutation.result
+        await useLoginMutation.login(values).then(async result => {
+          if (result?.Login) {
+            const tokenService = new TokenService()
+            await tokenService.saveToken(result.Login.token)
 
-        if (result) {
-          const tokenService = new TokenService()
-          await tokenService.saveToken(result.Login.token)
+            authDispatch({
+              type: 'setAuthDetails',
+              payload: {
+                name: result.Login.user.name,
+                username: result.Login.user.username,
+                email: result.Login.user.email
+              }
+            })
 
-          authDispatch({
-            type: 'setAuthDetails',
-            payload: {
-              name: result.Login.user.name,
-              username: result.Login.user.username,
-              email: result.Login.user.email
+            toast.success('Success')
+
+            if (router?.query?.redirectTo) {
+              router.push(router.query.redirectTo)
+            } else {
+              router.push('/dashboard')
             }
-          })
-
-          toast.success('Success')
-
-          if (router?.query?.redirectTo) {
-            router.push(router.query.redirectTo)
           } else {
-            router.push('/dashboard')
+            toast.error(useLoginMutation.error?.[0]?.message)
           }
-        } else {
-          toast.error(useLoginMutation.error?.[0]?.message)
-        }
+        })
       } catch (e) {
       } finally {
         resetForm({})

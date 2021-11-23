@@ -159,12 +159,15 @@ const CreateAndDeployForm = props => {
               postPerDay: values.postPerDay
             }
           })
-          deploySiteMutation.result
           resetForm({})
           await sleep(3000)
-          router.push(
-            `/sites/${deploySiteMutation.result.deployNewSite.node._id}/tasks`
-          )
+          if (deploySiteMutation.result?.deployNewSite) {
+            router.push(
+              `/sites/${deploySiteMutation.result.deployNewSite.node._id}/tasks`
+            )
+          } else {
+            router.push('/sites')
+          }
         }
       } catch (e) {
         console.error(e)
