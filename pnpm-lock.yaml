@@ -22,6 +22,7 @@ specifiers:
   jwt-decode: ^3.1.2
   lodash: ^4.17.21
   next: 12.0.3
+  nextjs-progressbar: ^0.0.13
   postcss: ^8.3.11
   postcss-preset-env: ^7.0.1
   react: 17.0.2
@@ -53,6 +54,7 @@ dependencies:
   jwt-decode: 3.1.2
   lodash: 4.17.21
   next: 12.0.3_0c41f19aae22112e9f1896e888ec7296
+  nextjs-progressbar: 0.0.13_next@12.0.3+react@17.0.2
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-pro-sidebar: 0.7.1_react-dom@17.0.2+react@17.0.2
@@ -3014,6 +3016,18 @@ packages:
       - webpack
     dev: false
 
+  /nextjs-progressbar/0.0.13_next@12.0.3+react@17.0.2:
+    resolution: {integrity: sha512-vuE9/j1yaFyHhMVwdlPZbGbcwnvoZZMH8fXUG+HCa+w5uojRNOMO43EL+o9YZ53QwQHsjWdfUapz+J8D/u3jFw==}
+    peerDependencies:
+      next: '>= 6.0.0 <=12.x.x'
+      react: '>= 16.0.0 <= 17.x.x'
+    dependencies:
+      next: 12.0.3_0c41f19aae22112e9f1896e888ec7296
+      nprogress: 0.2.0
+      prop-types: 15.7.2
+      react: 17.0.2
+    dev: false
+
   /node-emoji/1.11.0:
     resolution: {integrity: sha512-wo2DpQkQp7Sjm2A0cq+sN7EHKO6Sl0ctXeBdFZrL9T9+UywORbufTcTZxom8YqpLQt/FqNMUkOpkZrJVYSKD3A==}
     dependencies:
@@ -3052,6 +3066,10 @@ packages:
     resolution: {integrity: sha512-DlL+XwOy3NxAQ8xuC0okPgK46iuVNAK01YN7RueYBqqFeGsBjV9XmCAzAdgt+667bCl5kPh9EqKKDwnaPG1I7A==}
     engines: {node: '>=10'}
     dev: true
+
+  /nprogress/0.2.0:
+    resolution: {integrity: sha1-y480xTIT2JVyP8urkH6UIq28r7E=}
+    dev: false
 
   /nth-check/2.0.1:
     resolution: {integrity: sha512-it1vE95zF6dTT9lBsYbxvqh0Soy4SPowchj0UBGj/V6cTPnXXtQOPUbhZ6CmGzAD/rW22LQK6E96pcdJXk4A4w==}

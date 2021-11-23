@@ -4,6 +4,7 @@ import { AuthProvider } from '@/services/Auth.service'
 import { MantineProvider, NormalizeCSS, GlobalStyles } from '@mantine/core'
 import { NotificationsProvider } from '@mantine/notifications'
 import { ToastContainer } from 'react-toastify'
+import NextNProgress from 'nextjs-progressbar'
 
 import 'react-toastify/dist/ReactToastify.min.css'
 import '@/styles/sidebar/styles.scss'
@@ -25,6 +26,7 @@ export default function App(props) {
         <NotificationsProvider>
           <ApolloProvider client={apolloClient}>
             <AuthProvider>
+              <NextNProgress />
               <Component {...pageProps} />
               <ToastContainer
                 position="bottom-center"
