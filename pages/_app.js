@@ -4,9 +4,9 @@ import { AuthProvider } from '@/services/Auth.service'
 import { MantineProvider, NormalizeCSS, GlobalStyles } from '@mantine/core'
 import { NotificationsProvider } from '@mantine/notifications'
 import { ToastContainer } from 'react-toastify'
-import '../styles/globals.css'
 import 'react-toastify/dist/ReactToastify.min.css'
 import '../styles/sidebar/styles.scss'
+import '../styles/globals.css'
 
 export default function App(props) {
   const { Component, pageProps } = props
