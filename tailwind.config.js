@@ -1,9 +1,7 @@
 module.exports = {
   // mode: 'jit',
-  purge: [
-    './public/**/*.html',
-    './{components,pages,views}/**/*.{js,jsx,ts,tsx,vue}'
-  ],
+  // purge: ['./components/**/*.js', './views/**/*.js', './views/**/**/*.js'],
+  purge: false,
   theme: {
     extend: {
       colors: {
