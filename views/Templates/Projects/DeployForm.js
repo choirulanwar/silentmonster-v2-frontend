@@ -1,5 +1,6 @@
 import {
   TextInput,
+  NumberInput,
   Textarea,
   Button,
   NativeSelect,

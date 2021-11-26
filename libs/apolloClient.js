@@ -110,6 +110,9 @@ function createApolloClient() {
         },
         projectTemplates: {
           keyFields: []
+        },
+        schedules: {
+          keyFields: []
         }
       }
     }),

@@ -128,7 +128,7 @@ const Details = ({ pageInfo, queries }) => {
                   </div>
                   <div className="text-sm">
                     Deployment status:{' '}
-                    {
+                    {queries.site.data.node.conclusion ? (
                       <Badge
                         color={
                           conclusionColor[queries.site.data.node.conclusion]
@@ -136,7 +136,9 @@ const Details = ({ pageInfo, queries }) => {
                       >
                         {queries.site.data.node.conclusion}
                       </Badge>
-                    }
+                    ) : (
+                      <Badge color={conclusionColor['QUEUE']}>PENDING</Badge>
+                    )}
                   </div>
                   <div className="text-sm">
                     Last update:{' '}

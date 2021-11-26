@@ -156,7 +156,8 @@ const CreateAndDeployForm = props => {
               gtm: values.gtm,
               histats: values.histats,
               initPostCount: values.initPostCount,
-              postPerDay: values.postPerDay
+              postPerDay: values.postPerDay,
+              manualTrigger: true
             }
           })
           resetForm({})

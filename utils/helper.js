@@ -15,6 +15,16 @@ export const taskTypeColor = {
     variant: 'gradient',
     from: 'teal',
     to: 'lime'
+  },
+  DEPLOY_SCHEDULE: {
+    variant: 'gradient',
+    from: 'indigo',
+    to: 'cyan'
+  },
+  POST_SCHEDULE: {
+    variant: 'gradient',
+    from: 'teal',
+    to: 'lime'
   }
 }
 

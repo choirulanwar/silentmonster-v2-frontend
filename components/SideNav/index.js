@@ -16,7 +16,7 @@ import {
   VercelLogoIcon,
   GitHubLogoIcon,
   BarChartIcon,
-  LockOpen1Icon
+  TimerIcon
 } from '@radix-ui/react-icons'
 import {
   ProSidebar,
@@ -58,6 +58,11 @@ const SideNav = ({ toggled, onToggle }) => {
             <MenuItem icon={<GlobeIcon />}>
               <Link href="/sites">
                 <a>Sites</a>
+              </Link>
+            </MenuItem>
+            <MenuItem icon={<TimerIcon />}>
+              <Link href="/schedules">
+                <a>Schedules</a>
               </Link>
             </MenuItem>
             <SubMenu title="Templates" icon={<EnvelopeOpenIcon />}>
@@ -110,11 +115,6 @@ const SideNav = ({ toggled, onToggle }) => {
               </MenuItem>
             </SubMenu>
             <SubMenu title="Tools" icon={<EnvelopeOpenIcon />}>
-            <MenuItem icon={<LockOpen1Icon />}>
-                <Link href="/tools/summon-monster">
-                  <a>Summon Monster </a>
-                </Link>
-              </MenuItem>
               <MenuItem icon={<BarChartIcon />}>
                 <Link href="/tools/trending-keyword">
                   <a>Trending keyword</a>
