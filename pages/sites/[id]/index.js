@@ -10,7 +10,7 @@ import View from '@/views/Sites/Details'
 const Page = props => {
   const pageInfo = {
     title: 'Site',
-    href: `/site/${props?.id}`
+    href: `/sites/${props?.id}`
   }
   const variables = {
     id: props?.id
