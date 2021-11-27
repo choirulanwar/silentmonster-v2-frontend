@@ -5,11 +5,15 @@ import * as Yup from 'yup'
 
 import { useRegister } from '@/hooks/useAuth'
 
+import { useAuthContext } from '@/services/Auth.service'
+import TokenService from '@/services/Token.service'
+
 import View from '@/views/Auth/Register'
 import { toast } from 'react-toastify'
 
 const RegisterForm = () => {
   const router = useRouter()
+  const [authState, authDispatch] = useAuthContext()
 
   const useRegisterMutation = useRegister()
 
@@ -30,9 +34,27 @@ const RegisterForm = () => {
       try {
         await useRegisterMutation.register(values).then(async result => {
           if (result?.Register) {
+            const tokenService = new TokenService()
+            await tokenService.saveToken(result.Register.token)
+
+            authDispatch({
+              type: 'setAuthDetails',
+              payload: {
+                name: result.Register.user.name,
+                username: result.Register.user.username,
+                email: result.Register.user.email
+              }
+            })
+
             toast.success('Success')
 
-            router.push('/confirm-mail')
+            if (router?.query?.redirectTo) {
+              router.push(router.query.redirectTo)
+            } else {
+              router.push('/dashboard')
+            }
+
+            // router.push('/confirm-mail')
           } else {
             toast.error(useRegisterMutation.error?.[0]?.message)
           }

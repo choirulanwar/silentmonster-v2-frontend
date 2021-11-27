@@ -29,7 +29,7 @@ const ConfirmMailForm = () => {
           if (result?.ConfirmMail) {
             toast.success('Success')
 
-            router.push('/dashboard')
+            router.push('/login')
           } else {
             toast.error(useConfirmMailMutation.error?.[0]?.message)
           }
@@ -43,6 +43,7 @@ const ConfirmMailForm = () => {
 
   return {
     ...form,
+    tokenFromQuery: router?.query?.token,
     isSubmitting: useConfirmMailMutation.isLoading,
     result: useConfirmMailMutation.result,
     error: useConfirmMailMutation.error
@@ -50,8 +51,17 @@ const ConfirmMailForm = () => {
 }
 
 const Page = () => {
-  const { values, touched, errors, handleChange, handleSubmit, isSubmitting } =
-    ConfirmMailForm()
+  const {
+    tokenFromQuery,
+    values,
+    touched,
+    errors,
+    handleChange,
+    handleSubmit,
+    isSubmitting
+  } = ConfirmMailForm()
+
+  const queries = { tokenFromQuery }
 
   const mutations = {
     values,
@@ -62,7 +72,7 @@ const Page = () => {
     isSubmitting
   }
 
-  return <View mutations={mutations} />
+  return <View queries={queries} mutations={mutations} />
 }
 
 export const getServerSideProps = async ctx => authSSP(ctx)

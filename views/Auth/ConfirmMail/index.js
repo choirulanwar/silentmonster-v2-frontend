@@ -3,7 +3,7 @@ import Layout from '@/layouts/Auth'
 import { TextInput, Button } from '@mantine/core'
 import { LockClosedIcon } from '@radix-ui/react-icons'
 
-const ConfirmMail = ({ mutations }) => (
+const ConfirmMail = ({ queries, mutations }) => (
   <Layout title="Confirm Mail">
     <form
       className="px-8 pt-6 pb-2 mb-4 bg-white rounded"
@@ -13,9 +13,10 @@ const ConfirmMail = ({ mutations }) => (
         <TextInput
           icon={<LockClosedIcon />}
           placeholder="ABC1234567"
-          label="Confirmation Code"
+          label="Token"
           required
           name="token"
+          defaultValue={queries.tokenFromQuery}
           onChange={mutations.handleChange}
           error={mutations.touched.token && mutations.errors.token}
         />

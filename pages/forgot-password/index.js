@@ -31,7 +31,7 @@ const ForgotPasswordForm = () => {
             if (result?.ForgotPassword) {
               toast.success('Success')
 
-              router.push('/reset-password')
+              router.push('/login')
             } else {
               toast.error(useForgotPasswordMutation.error?.[0]?.message)
             }
