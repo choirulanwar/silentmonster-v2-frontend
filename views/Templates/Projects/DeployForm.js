@@ -44,10 +44,12 @@ const Form = props => {
             />
 
             <NativeSelect
-              data={props.keywords.datas.edges.map(({ node: { _id, label } }) => ({
-                value: _id,
-                label
-              }))}
+              data={props.keywords.datas.edges.map(
+                ({ node: { _id, label } }) => ({
+                  value: _id,
+                  label
+                })
+              )}
               placeholder="Pick one"
               label="Keyword"
               required
@@ -100,32 +102,12 @@ const Form = props => {
         <Tab label="Vars">
           <div className="mb-4 space-y-5">
             <NativeSelect
-              data={[
-                {
-                  value: 'tailwind-mp3',
-                  label: 'tailwind-mp3'
-                },
-                {
-                  value: 'tailwind-wall',
-                  label: 'tailwind-wall'
-                },
-                {
-                  value: 'z-wallpaper',
-                  label: 'z-wallpaper'
-                },
-                {
-                  value: 'slayton',
-                  label: 'slayton'
-                },
-                {
-                  value: 'blackford',
-                  label: 'blackford'
-                },
-                {
-                  value: 'hames',
-                  label: 'hames'
-                }
-              ]}
+              data={props.themes.datas.edges.map(
+                ({ node: { _id, label } }) => ({
+                  value: _id,
+                  label
+                })
+              )}
               placeholder="Pick one"
               label="Theme"
               required

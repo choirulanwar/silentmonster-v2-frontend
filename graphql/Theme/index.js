@@ -9,9 +9,8 @@ export const GET_THEMES_QUERIES = gql`
           label
           type
           description
-          thumbnail
-          public
           url
+          token
           createdBy {
             _id
           }
@@ -39,9 +38,8 @@ export const GET_THEME_QUERIES = gql`
         label
         type
         description
-        thumbnail
-        public
         url
+        token
         createdBy {
           _id
         }
@@ -60,9 +58,8 @@ export const CREATE_THEME_MUTATIONS = gql`
         label
         type
         description
-        thumbnail
-        public
         url
+        token
         createdBy {
           _id
         }
@@ -81,9 +78,8 @@ export const UPDATE_THEME_MUTATIONS = gql`
         label
         type
         description
-        thumbnail
-        public
         url
+        token
         createdBy {
           _id
         }
@@ -102,9 +98,8 @@ export const DELETE_THEME_MUTATIONS = gql`
         label
         type
         description
-        thumbnail
-        public
         url
+        token
         createdBy {
           _id
         }

@@ -10,6 +10,7 @@ import {
 
 import { useKeywords } from '@/hooks/useKeyword'
 import { useProjectTemplates } from '@/hooks/useProjectTemplate'
+import { useThemes } from '@/hooks/useTheme'
 
 import View from '@/views/Schedules'
 
@@ -69,6 +70,7 @@ const Page = props => {
     href: '/schedules',
     activePage: props?.page || 1
   }
+  const vars = { page: 1, limit: 100 }
 
   const {
     values,
@@ -83,13 +85,15 @@ const Page = props => {
   const schedulesQuery = useSchedules(variables)
   const deleteScheduleMutation = useDeleteSchedule(variables)
 
-  const keywordsQuery = useKeywords({ page: 1, limit: 100 })
-  const templatesQuery = useProjectTemplates({ page: 1, limit: 100 })
+  const keywordsQuery = useKeywords(vars)
+  const templatesQuery = useProjectTemplates(vars)
+  const themesQuery = useThemes(vars)
 
   const queries = {
     schedules: schedulesQuery,
     keywords: keywordsQuery,
-    projectTemplates: templatesQuery
+    projectTemplates: templatesQuery,
+    themes: themesQuery
   }
   const mutations = {
     values,

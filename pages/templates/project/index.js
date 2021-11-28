@@ -16,6 +16,7 @@ import { useDomains } from '@/hooks/useDomain'
 import { useGithubs } from '@/hooks/useGithub'
 import { useAdss } from '@/hooks/useAds'
 import { useKeywords } from '@/hooks/useKeyword'
+import { useThemes } from '@/hooks/useTheme'
 
 import View from '@/views/Templates/Projects'
 
@@ -213,6 +214,7 @@ const Page = props => {
   const githubsQuery = useGithubs(vars)
   const adssQuery = useAdss(vars)
   const keywordsQuery = useKeywords(vars)
+  const themesQuery = useThemes(vars)
 
   const queries = {
     projectTemplates: projectTemplatesQuery,
@@ -220,7 +222,8 @@ const Page = props => {
     domains: domainsQuery,
     githubs: githubsQuery,
     adss: adssQuery,
-    keywords: keywordsQuery
+    keywords: keywordsQuery,
+    themes: themesQuery
   }
 
   const mutations = {

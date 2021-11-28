@@ -96,7 +96,7 @@ const Details = ({ pageInfo, queries }) => {
                     Tagline: {queries.site.data.node.tagline}
                   </div>
                   <div className="text-sm">
-                    Theme: {queries.site.data.node.theme}
+                    Theme: {queries.site.data.node.theme.label}
                   </div>
                   <div className="text-sm">
                     Init post count: {queries.site.data.node.initPostCount}

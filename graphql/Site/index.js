@@ -10,6 +10,10 @@ export const GET_SITES_QUERIES = gql`
           type
           hostname
           title
+          theme {
+            _id
+            label
+          }
           template {
             _id
             label
@@ -50,7 +54,10 @@ export const GET_SITE_QUERIES = gql`
         title
         description
         tagline
-        theme
+        theme {
+          _id
+          label
+        }
         initPostCount
         postPerDay
         template {

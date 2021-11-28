@@ -29,7 +29,7 @@ export const taskTypeColor = {
 }
 
 export const typeSiteColor = {
-  IMAGE: {
+  VIDEO: {
     variant: 'gradient',
     from: 'indigo',
     to: 'cyan'
