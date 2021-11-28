@@ -318,6 +318,9 @@ export const DEPLOY_NEW_SITE_MUTATIONS = gql`
         keyword {
           _id
         }
+        theme {
+          _id
+        }
         template {
           _id
         }
