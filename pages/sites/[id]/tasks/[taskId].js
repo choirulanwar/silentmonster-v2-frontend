@@ -1,4 +1,4 @@
-import { adminSSP } from '@/utils/redirects'
+// import { adminSSP } from '@/utils/redirects'
 
 import { useJob } from '@/hooks/useJob'
 
@@ -18,5 +18,5 @@ const Page = props => {
   return <View pageInfo={pageInfo} queries={queries} />
 }
 
-export const getServerSideProps = async ctx => adminSSP(ctx)
+// export const getServerSideProps = async ctx => adminSSP(ctx)
 export default Page

@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import { ApolloProvider } from '@apollo/client'
 import { useApollo } from '@/libs/apolloClient'
 import { AuthProvider } from '@/services/Auth.service'
@@ -11,8 +12,14 @@ import '@/styles/sidebar/styles.scss'
 import '@/styles/globals.css'
 
 export default function App(props) {
+  const router = useRouter()
+  const pageParams = {
+    ...router.query,
+    page: parseInt(router.query?.page || 1)
+  }
   const { Component, pageProps } = props
-  const apolloClient = useApollo(pageProps)
+  const globalProps = { ...pageProps, ...pageParams }
+  const apolloClient = useApollo(globalProps)
 
   return (
     <>
@@ -27,7 +34,7 @@ export default function App(props) {
           <ApolloProvider client={apolloClient}>
             <AuthProvider>
               <NextNProgress />
-              <Component {...pageProps} />
+              <Component {...globalProps} />
               <ToastContainer
                 position="bottom-center"
                 autoClose={1000}

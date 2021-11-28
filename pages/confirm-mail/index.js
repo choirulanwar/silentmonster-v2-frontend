@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import { authSSP } from '@/utils/redirects'
+// import { authSSP } from '@/utils/redirects'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 
@@ -75,6 +75,6 @@ const Page = () => {
   return <View queries={queries} mutations={mutations} />
 }
 
-export const getServerSideProps = async ctx => authSSP(ctx)
+// export const getServerSideProps = async ctx => authSSP(ctx)
 
 export default Page

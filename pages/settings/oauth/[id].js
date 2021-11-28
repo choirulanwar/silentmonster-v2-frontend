@@ -1,4 +1,4 @@
-import { adminSSP } from '@/utils/redirects'
+// import { adminSSP } from '@/utils/redirects'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 
@@ -81,5 +81,5 @@ const Page = props => {
   )
 }
 
-export const getServerSideProps = async ctx => adminSSP(ctx)
+// export const getServerSideProps = async ctx => adminSSP(ctx)
 export default Page

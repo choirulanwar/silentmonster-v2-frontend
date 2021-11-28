@@ -1,4 +1,4 @@
-import { adminSSP } from '@/utils/redirects'
+// import { adminSSP } from '@/utils/redirects'
 import { useSites, useDeleteSite } from '@/hooks/useSite'
 
 import View from '@/views/Sites'
@@ -11,7 +11,7 @@ const Page = props => {
 
   const pageInfo = {
     title: 'Sites',
-    href: '/settings/site',
+    href: '/sites',
     activePage: props?.page || 1
   }
   const sitesQuery = useSites(variables)
@@ -32,5 +32,5 @@ const Page = props => {
   return <View pageInfo={pageInfo} queries={queries} mutations={mutations} />
 }
 
-export const getServerSideProps = async ctx => adminSSP(ctx)
+// export const getServerSideProps = async ctx => adminSSP(ctx)
 export default Page
