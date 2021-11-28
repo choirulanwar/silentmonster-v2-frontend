@@ -7,7 +7,7 @@ export default async function middleware(req) {
 
   let isValidToken
   try {
-    isValidToken = await jwt.verify(token, '["=R{f6BzbU-W3hm')
+    isValidToken = await jwt.verify(token, process.env.JWT_SECRET)
   } catch (e) {
     isValidToken = false
   }
