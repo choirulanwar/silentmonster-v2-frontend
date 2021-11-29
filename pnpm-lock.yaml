@@ -9,6 +9,7 @@ specifiers:
   '@mantine/notifications': ^3.1.9
   '@modulz/radix-icons': ^4.0.0
   '@radix-ui/react-icons': ^1.0.3
+  '@tinymce/tinymce-react': ^3.13.0
   '@tsndr/cloudflare-worker-jwt': ^1.1.5
   autoprefixer: ^10.4.0
   axios: ^0.24.0
@@ -46,6 +47,7 @@ dependencies:
   '@mantine/notifications': 3.1.9_97bc257438f0f2dbe31c002c7db4ed61
   '@modulz/radix-icons': 4.0.0_react@17.0.2
   '@radix-ui/react-icons': 1.0.3_react@17.0.2
+  '@tinymce/tinymce-react': 3.13.0_react-dom@17.0.2+react@17.0.2
   '@tsndr/cloudflare-worker-jwt': 1.1.5
   axios: 0.24.0
   classnames: 2.3.1
@@ -627,6 +629,18 @@ packages:
   /@rushstack/eslint-patch/1.1.0:
     resolution: {integrity: sha512-JLo+Y592QzIE+q7Dl2pMUtt4q8SKYI5jDrZxrozEQxnGVOyYE+GWK9eLkwTaeN9DDctlaRAQ3TBmzZ1qdLE30A==}
     dev: true
+
+  /@tinymce/tinymce-react/3.13.0_react-dom@17.0.2+react@17.0.2:
+    resolution: {integrity: sha512-8+OHYIUP9W5D5z7gknausaG48ovQtEvjcK4c+zpha7QppRVVX0ltaINpo10V6Vb4qj9Jf7ZFfZpMRxxcFL2YvQ==}
+    peerDependencies:
+      react: ^17.0.1 || ^16.7.0
+      react-dom: ^17.0.1 || ^16.7.0
+    dependencies:
+      prop-types: 15.7.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+      tinymce: 5.10.2
+    dev: false
 
   /@trysound/sax/0.2.0:
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
@@ -4786,6 +4800,10 @@ packages:
 
   /tiny-warning/1.0.3:
     resolution: {integrity: sha512-lBN9zLN/oAf68o3zNXYrdCt1kP8WsiGW8Oo2ka41b2IM5JL/S1CTyX1rW0mb/zSuJun0ZUrDxx4sqvYS2FWzPA==}
+    dev: false
+
+  /tinymce/5.10.2:
+    resolution: {integrity: sha512-5QhnZ6c8F28fYucLLc00MM37fZoAZ4g7QCYzwIl38i5TwJR5xGqzOv6YMideyLM4tytCzLCRwJoQen2LI66p5A==}
     dev: false
 
   /tmp/0.2.1:

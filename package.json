@@ -15,6 +15,7 @@
     "@mantine/notifications": "^3.1.9",
     "@modulz/radix-icons": "^4.0.0",
     "@radix-ui/react-icons": "^1.0.3",
+    "@tinymce/tinymce-react": "^3.13.0",
     "@tsndr/cloudflare-worker-jwt": "^1.1.5",
     "axios": "^0.24.0",
     "classnames": "^2.3.1",
