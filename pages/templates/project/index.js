@@ -14,6 +14,7 @@ import {
 import { useWebmasters } from '@/hooks/useWebmaster'
 import { useDomains } from '@/hooks/useDomain'
 import { useGithubs } from '@/hooks/useGithub'
+import { usePostTemplates } from '@/hooks/usePostTemplate'
 import { useAdss } from '@/hooks/useAds'
 import { useKeywords } from '@/hooks/useKeyword'
 import { useThemes } from '@/hooks/useTheme'
@@ -75,6 +76,11 @@ const CreateAndDeployForm = props => {
       then: Yup.string().required(),
       otherwise: Yup.string()
     }),
+    post: Yup.string().when('type', {
+      is: v => !v,
+      then: Yup.string().required(),
+      otherwise: Yup.string()
+    }),
     type: Yup.string(),
     keyword: Yup.string().when('type', {
       is: v => v,
@@ -130,6 +136,7 @@ const CreateAndDeployForm = props => {
               webmaster: values.webmaster,
               domain: values.domain,
               github: values.github,
+              post: values.post,
               ads: {
                 socialBar: values.socialBar,
                 banner300x250: values.banner300x250,
@@ -212,6 +219,7 @@ const Page = props => {
   const webmastersQuery = useWebmasters(vars)
   const domainsQuery = useDomains(vars)
   const githubsQuery = useGithubs(vars)
+  const postTemplatesQuery = usePostTemplates(vars)
   const adssQuery = useAdss(vars)
   const keywordsQuery = useKeywords(vars)
   const themesQuery = useThemes(vars)
@@ -221,6 +229,7 @@ const Page = props => {
     webmasters: webmastersQuery,
     domains: domainsQuery,
     githubs: githubsQuery,
+    postTemplates: postTemplatesQuery,
     adss: adssQuery,
     keywords: keywordsQuery,
     themes: themesQuery

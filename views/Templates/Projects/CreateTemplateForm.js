@@ -70,6 +70,22 @@ const Form = props => {
               onChange={props.handleChange}
               error={props.touched.github && props.errors.github}
             />
+
+            <NativeSelect
+              data={props.postTemplates.datas.edges.map(
+                ({ node: { _id, label } }) => ({
+                  value: _id,
+                  label
+                })
+              )}
+              placeholder="Pick one"
+              label="Post Template"
+              required
+              name="post"
+              value={props.values.post}
+              onChange={props.handleChange}
+              error={props.touched.post && props.errors.post}
+            />
           </div>
         </Tab>
         <Tab label="Ads">

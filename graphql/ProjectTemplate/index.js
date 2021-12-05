@@ -94,6 +94,9 @@ export const GET_PROJECT_TEMPLATE_QUERIES = gql`
         server {
           _id
         }
+        post {
+          _id
+        }
         ads {
           socialBar {
             _id
@@ -151,6 +154,9 @@ export const CREATE_PROJECT_TEMPLATE_MUTATIONS = gql`
           _id
         }
         server {
+          _id
+        }
+        post {
           _id
         }
         createdBy {
@@ -212,6 +218,9 @@ export const UPDATE_PROJECT_TEMPLATE_MUTATIONS = gql`
         server {
           _id
         }
+        post {
+          _id
+        }
         createdBy {
           _id
         }
@@ -269,6 +278,9 @@ export const DELETE_PROJECT_TEMPLATE_MUTATIONS = gql`
           _id
         }
         server {
+          _id
+        }
+        post {
           _id
         }
         createdBy {

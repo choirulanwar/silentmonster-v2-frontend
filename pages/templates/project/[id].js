@@ -10,6 +10,7 @@ import {
 import { useWebmasters } from '@/hooks/useWebmaster'
 import { useDomains } from '@/hooks/useDomain'
 import { useGithubs } from '@/hooks/useGithub'
+import { usePostTemplates } from '@/hooks/usePostTemplate'
 import { useAdss } from '@/hooks/useAds'
 import { useKeywords } from '@/hooks/useKeyword'
 
@@ -25,6 +26,7 @@ const UpdateForm = props => {
     webmaster: props?.projectTemplate?.data?.node?.webmaster?._id || '',
     domain: props?.projectTemplate?.data?.node?.domain?._id || '',
     github: props?.projectTemplate?.data?.node?.github?._id || '',
+    post: props?.projectTemplate?.data?.node?.post?._id || '',
     socialBar: props?.projectTemplate?.data?.node?.ads?.socialBar?._id,
     banner300x250: props?.projectTemplate?.data?.node?.ads?.banner300x250?._id,
     banner468x60: props?.projectTemplate?.data?.node?.ads?.banner468x60?._id,
@@ -41,6 +43,7 @@ const UpdateForm = props => {
     webmaster: Yup.string().required().trim(),
     domain: Yup.string().required().trim(),
     github: Yup.string().required().trim(),
+    post: Yup.string().required().trim(),
     socialBar: Yup.string().trim(),
     banner300x250: Yup.string().trim(),
     banner468x60: Yup.string().trim(),
@@ -76,6 +79,7 @@ const UpdateForm = props => {
             webmaster: values.webmaster,
             domain: values.domain,
             github: values.github,
+            post: values.post,
             ads: {
               socialBar: values.socialBar,
               banner300x250: values.banner300x250,
@@ -116,6 +120,7 @@ const Page = props => {
   const webmastersQuery = useWebmasters(vars)
   const domainsQuery = useDomains(vars)
   const githubsQuery = useGithubs(vars)
+  const postTemplatesQuery = usePostTemplates(vars)
   const adssQuery = useAdss(vars)
   const keywordsQuery = useKeywords(vars)
 
@@ -127,6 +132,7 @@ const Page = props => {
     webmasters: webmastersQuery,
     domains: domainsQuery,
     githubs: githubsQuery,
+    postTemplates: postTemplatesQuery,
     adss: adssQuery,
     keywords: keywordsQuery
   }
